@@ -1,9 +1,9 @@
 const plotly = require('plotly')('Ar11rA', 'DSMZJOu7j9rqzVKjP7Cd')
-const convertToXL = require('./convertToExcel')
+const convertToXL = require('../utilities/convertToExcel')
 const barChart = (jsonData) => {
   convertToXL(jsonData)
   const xAxis = jsonData.map((item) => item.name)
-  const yAxis = jsonData.map((item) => (item.time/item.totalTime)*100)
+  const yAxis = jsonData.map((item) => item.time)
 
   const data = [
     {

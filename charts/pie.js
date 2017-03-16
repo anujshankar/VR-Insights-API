@@ -1,9 +1,10 @@
+const convertToXL = require('../utilities/convertToExcel')
 const Canvas = require('canvas')
   , canvas = new Canvas(800, 800)
   , ctx = canvas.getContext('2d')
   , Chart = require('nchart')
   , fs = require('fs')
-const convertToXL = require('./convertToExcel')
+
 const assignColor = () => {
   var letters = '0123456789ABCDEF'
   var color = '#'
