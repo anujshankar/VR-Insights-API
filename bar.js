@@ -6,8 +6,8 @@ const plotly = require('plotly')('Ar11rA', 'DSMZJOu7j9rqzVKjP7Cd')
 // { 'id': 'e', 'value': '8' }]
 
 const barChart = (jsonData) => {
-  const xAxis = jsonData.map((item) => item.id)
-  const yAxis = jsonData.map((item) => item.value)
+  const xAxis = jsonData.map((item) => item.name)
+  const yAxis = jsonData.map((item) => (item.time/item.totalTime)*100)
 
   const data = [
     {

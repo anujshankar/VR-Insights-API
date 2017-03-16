@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
 app.post('/pie', (request, response) => {
-  const data = request.body
+  const data = request.body 
   pieChart(data)
   convertToXL(data)
   response.send('Pie Api')
