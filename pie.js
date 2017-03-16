@@ -3,32 +3,7 @@ const Canvas = require('canvas')
   , ctx = canvas.getContext('2d')
   , Chart = require('nchart')
   , fs = require('fs')
-// const data = [
-//   {
-//     value: 100,
-//     color: '#F7464A',
-//     highlight: '#FF5A5E',
-//     label: 'Red',
-//     labelColor: 'white',
-//     labelFontSize: '16'
-//   },
-//   {
-//     value: 500,
-//     color: '#46BFBD',
-//     highlight: '#5AD3D1',
-//     label: 'Green1',
-//     labelColor: 'white',
-//     labelFontSize: '16'
-//   },
-//   {
-//     value: 100,
-//     color: '#FDB452',
-//     highlight: '#FFC870',
-//     label: 'Yellow',
-//     labelColor: 'white',
-//     labelFontSize: '16'
-//   }
-// ]
+const convertToXL = require('./convertToExcel')
 const assignColor = () => {
   var letters = '0123456789ABCDEF'
   var color = '#'
@@ -38,6 +13,7 @@ const assignColor = () => {
   return color
 }
 const pieChart = (data) => {
+  convertToXL(data)
   const pieData = data.map((item) => {
     return {
       value: (item.time) / (item.totalTime) * 100,
