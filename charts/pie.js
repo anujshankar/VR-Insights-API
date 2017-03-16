@@ -15,9 +15,10 @@ const assignColor = () => {
 }
 const pieChart = (data) => {
   convertToXL(data)
+  const totalTime = data.reduce((acc, item) => acc += item.time, 0)
   const pieData = data.map((item) => {
     return {
-      value: (item.time) / (item.totalTime) * 100,
+      value: (item.time / totalTime) * 100,
       color: assignColor(),
       label: item.name
     }
@@ -25,6 +26,17 @@ const pieChart = (data) => {
   const optionsPie = {
     tooltipEvents: [],
     showTooltips: true,
+    legend: {
+      display: true,
+      position: 'top',
+    },
+    pieceLabel: {
+      mode: 'label'
+    },
+    title: {
+      display: true,
+      text: 'Objects Of Interest'
+    },
     onAnimationComplete: function () {
       this.showTooltip(this.segments, true)
     },
