@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const pieChart = require('../charts/pie')
-const barChart = require('../charts/bar')
+const barChart = require('../charts/barLocal')
 const app = express()
 app.use(express.static('public'))
 app.use(bodyParser.json())
