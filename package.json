@@ -9,6 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nchart": "^1.0.1"
+    "body-parser": "^1.17.1",
+    "canvas": "^1.6.4",
+    "express": "^4.15.2",
+    "json2xls": "^0.1.2",
+    "nchart": "^1.0.1",
+    "plotly": "^1.0.6"
   }
 }
